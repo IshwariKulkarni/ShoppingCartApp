@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202304041612179_migration1.designer.cs">
       <DependentUpon>202304041612179_migration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304051027083_autoincrement.cs" />
+    <Compile Include="Migrations\202304051027083_autoincrement.designer.cs">
+      <DependentUpon>202304051027083_autoincrement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartDBContext.cs" />
@@ -241,6 +245,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304041612179_migration1.resx">
       <DependentUpon>202304041612179_migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304051027083_autoincrement.resx">
+      <DependentUpon>202304051027083_autoincrement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
