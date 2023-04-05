@@ -84,7 +84,7 @@ namespace ShoppingCartApp.Controllers
         {
             if (Session["UserId"] != null)
             {
-                return View();
+                return View(cd.products.ToList());
             }
             else
             {
