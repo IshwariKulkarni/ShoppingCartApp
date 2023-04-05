@@ -80,11 +80,26 @@ namespace ShoppingCartApp.Controllers
             return View();
         }
 
-        public ActionResult LoggedIn()
+        public ActionResult LoggedIn(string searchBy, string search)
         {
             if (Session["UserId"] != null)
             {
-                return View(cd.products.ToList());
+                if (searchBy == "ProductName")
+                {
+                    var data = cd.products.Where(m => m.ProductName.StartsWith(search)).ToList();
+                    return View(data);
+                }
+                else if (searchBy == "ProductCategory")
+                {
+                    var data = cd.products.Where(m => m.ProductCategory.StartsWith(search)).ToList();
+                    return View(data);
+                }
+                else
+                {
+                    var data = cd.products.ToList();
+                    return View(data);
+                }
+                //return View(cd.products.ToList());
             }
             else
             {

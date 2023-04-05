@@ -10,13 +10,25 @@
         @if (Session["EmailId"] != null)
         {
             <text>
-                Welcome! @Session["EmailId"].ToString();
+                    <h2>Welcome! @Session["EmailId"].ToString();</h2>
             </text>
         }
 
 
     </legend>
 </fieldset>
+
+<p>Which products you want to buy?</p>
+<p>
+    @using (Html.BeginForm("LoggedIn", "Home", FormMethod.Get))
+    {
+        <b>Search By: </b>
+        @Html.RadioButton("searchBy", "ProductName") <text> Product Name </text>
+        @Html.RadioButton("searchBy", "ProductCategory", true) <text> Product Category </text> <br />
+        @Html.TextBox("search")
+        <input type="submit" value="Search" />
+    }
+</p>
 
 <table class="table">
     <tr>
