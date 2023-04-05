@@ -5,6 +5,16 @@
 }
 
 <h2>Which products you want to buy?</h2>
+<p>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <b>Search By: </b>
+        @Html.RadioButton("searchBy", "ProductName") <text> Product Name </text>
+        @Html.RadioButton("searchBy", "ProductCategory", true) <text> Product Category </text> <br />
+        @Html.TextBox("search")
+        <input type="submit" value="Search" />
+    }
+</p>
 
 <table class="table">
     <tr>

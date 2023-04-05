@@ -10,10 +10,26 @@ namespace ShoppingCartApp.Controllers
     public class HomeController : Controller
     {
         CartDBContext cd = new CartDBContext();
-        public ActionResult Index()
+        public ActionResult Index(string searchBy, string search)
         {
-            var products = cd.products.ToList();
-            return View(products);
+            //var products = cd.products.ToList();
+            //return View(cd.products.ToList());
+
+            if (searchBy == "ProductName")
+            {
+                var data = cd.products.Where(m=>m.ProductName.StartsWith(search)).ToList();
+                return View(data);
+            }
+            else if (searchBy == "ProductCategory")
+            {
+                var data = cd.products.Where(m => m.ProductCategory.StartsWith(search)).ToList();
+                return View(data);
+            }
+            else
+            {
+                var data = cd.products.ToList();
+                return View(data);
+            }
         }
 
         public ActionResult Register()
