@@ -22,7 +22,7 @@ namespace ShoppingCartApp.Models
         public float Amount { get; set; }
 
         [ForeignKey("OrderDetail")]
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
 
         public virtual OrderDetail OrderDetail { get; set; }
 

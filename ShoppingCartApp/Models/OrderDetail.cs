@@ -11,7 +11,7 @@ namespace ShoppingCartApp.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string OrderId { get; set; }
+        public int OrderId { get; set; }
         [Required(ErrorMessage = "Required")]
         public DateTime DateOfOrder { get; set; }
 
@@ -19,7 +19,7 @@ namespace ShoppingCartApp.Models
 
         [Required(ErrorMessage = "Required")]
         [ForeignKey("Product")]
-        public string ProductId { get; set; }
+        public int ProductId { get; set; }
 
 
         [Required(ErrorMessage = "Required")]

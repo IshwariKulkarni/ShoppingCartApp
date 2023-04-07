@@ -140,6 +140,10 @@
     <Compile Include="Migrations\202304051027083_autoincrement.designer.cs">
       <DependentUpon>202304051027083_autoincrement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304070254442_logoutAdded.cs" />
+    <Compile Include="Migrations\202304070254442_logoutAdded.designer.cs">
+      <DependentUpon>202304070254442_logoutAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartDBContext.cs" />
@@ -248,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304051027083_autoincrement.resx">
       <DependentUpon>202304051027083_autoincrement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304070254442_logoutAdded.resx">
+      <DependentUpon>202304070254442_logoutAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
