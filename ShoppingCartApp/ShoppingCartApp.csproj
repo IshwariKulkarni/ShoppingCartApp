@@ -144,6 +144,10 @@
     <Compile Include="Migrations\202304070254442_logoutAdded.designer.cs">
       <DependentUpon>202304070254442_logoutAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304070359499_typechange.cs" />
+    <Compile Include="Migrations\202304070359499_typechange.designer.cs">
+      <DependentUpon>202304070359499_typechange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartDBContext.cs" />
@@ -255,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304070254442_logoutAdded.resx">
       <DependentUpon>202304070254442_logoutAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304070359499_typechange.resx">
+      <DependentUpon>202304070359499_typechange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
