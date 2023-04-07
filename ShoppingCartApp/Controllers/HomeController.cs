@@ -46,7 +46,7 @@ namespace ShoppingCartApp.Controllers
                 cd.SaveChanges();
                 ModelState.Clear();
                 ViewBag.Message = customer.Name + "successfully registered.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
             else
             {
@@ -128,7 +128,7 @@ namespace ShoppingCartApp.Controllers
                 cd.SaveChanges();
                 ModelState.Clear();
                 ViewBag.Message = merchant.MerchantName + "successfully registered.";
-                return RedirectToAction("Index");
+                return RedirectToAction("MerchantLogin");
             }
             else
             {

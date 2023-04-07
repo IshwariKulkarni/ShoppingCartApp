@@ -22,12 +22,12 @@ namespace ShoppingCartApp.Controllers
         }
 
         // GET: Products/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+           // if (id == null)
+            //{
+              //  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             Product product = db.products.Find(id);
             if (product == null)
             {
@@ -62,12 +62,12 @@ namespace ShoppingCartApp.Controllers
         }
 
         // GET: Products/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+              //  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             Product product = db.products.Find(id);
             if (product == null)
             {
@@ -95,12 +95,12 @@ namespace ShoppingCartApp.Controllers
         }
 
         // GET: Products/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+              //  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             Product product = db.products.Find(id);
             if (product == null)
             {
@@ -112,7 +112,7 @@ namespace ShoppingCartApp.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.products.Find(id);
             db.products.Remove(product);
