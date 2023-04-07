@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +10,8 @@ namespace ShoppingCartApp.Models
     public class Merchant
     {
         [Key]
-        public string MerchantId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MerchantId { get; set; }
 
         [Required(ErrorMessage = "Name Required")]
         public string MerchantName { get; set; }
@@ -28,6 +30,10 @@ ErrorMessage = "Invalid email format")]
         [StringLength(100, ErrorMessage = "Password \"{0}\" must have {2} character", MinimumLength = 8)]
         [RegularExpression(@"^([a-zA-Z0-9@*#]{8,15})$", ErrorMessage = "Password must contain: Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase Alphabet, 1 Number and 1 Special Character")]
         public string MerchantPassword { get; set; }
+
+        [Compare("MerchantPassword", ErrorMessage = "Please confirm your password.")]
+        [DataType(DataType.Password)]
+        public string ConfirmMerchPassword { get; set; }
 
     }
 }

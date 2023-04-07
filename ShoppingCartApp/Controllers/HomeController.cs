@@ -108,6 +108,12 @@ namespace ShoppingCartApp.Controllers
 
         }
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login", "Home");
+        }
+
         public ActionResult MerchantRegister()
         {
             return View();
@@ -167,6 +173,12 @@ namespace ShoppingCartApp.Controllers
                 return RedirectToAction("MerchantLogin");
             }
 
+        }
+
+        public ActionResult MLogout()
+        {
+            Session.Abandon();
+            return RedirectToAction("MerchantLogin", "Home");
         }
 
     }

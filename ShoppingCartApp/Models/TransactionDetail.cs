@@ -10,6 +10,7 @@ namespace ShoppingCartApp.Models
     public class TransactionDetail
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TransactionId { get; set; }
 
         [Required]

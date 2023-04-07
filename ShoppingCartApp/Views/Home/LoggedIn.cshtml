@@ -18,6 +18,8 @@
     </legend>
 </fieldset>
 
+@Html.ActionLink("LogOut", "Logout", "Home")
+
 <p>Which products you want to buy?</p>
 <p>
     @using (Html.BeginForm("LoggedIn", "Home", FormMethod.Get))

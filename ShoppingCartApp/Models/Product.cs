@@ -10,7 +10,7 @@ namespace ShoppingCartApp.Models
     public class Product
     {
         [Key]
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string ProductId { get; set; }
         [Required(ErrorMessage = "Required")]
         public string ProductName { get; set; }

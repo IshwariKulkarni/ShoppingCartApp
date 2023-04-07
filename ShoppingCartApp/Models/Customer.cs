@@ -11,7 +11,7 @@ namespace ShoppingCartApp.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         [Required(ErrorMessage = "Name is Required")]
         public string Name { get; set; }
@@ -33,5 +33,9 @@ ErrorMessage = "Invalid email format")]
         [StringLength(100, ErrorMessage = "Password \"{0}\" must have {2} character", MinimumLength = 8)]
         [RegularExpression(@"^([a-zA-Z0-9@*#]{8,15})$", ErrorMessage = "Password must contain: Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase Alphabet, 1 Number and 1 Special Character")]
         public string Password { get; set; }
+
+        [Compare("Password", ErrorMessage ="Please confirm your password.")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }
     }
 }

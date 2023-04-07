@@ -10,6 +10,7 @@ namespace ShoppingCartApp.Models
     public class OrderDetail
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string OrderId { get; set; }
         [Required(ErrorMessage = "Required")]
         public DateTime DateOfOrder { get; set; }
@@ -23,7 +24,7 @@ namespace ShoppingCartApp.Models
 
         [Required(ErrorMessage = "Required")]
         [ForeignKey("Customer")]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public Customer Customer { get; set; }
 
         public Product Product { get; set; }
